@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.toDoApp{
+  margin: 1em;
+  padding: 1em;
+}
+
+.done{
+  text-decoration: line-through;
+}
