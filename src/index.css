@@ -1,14 +1,38 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
 }
 
-.toDoApp{
+li {
+  cursor: pointer;
+}
+
+h2 {
+  color: #7c795d;
+  font-family: "Trocchi", serif;
+  font-size: 45px;
+  font-weight: normal;
+  line-height: 48px;
+  margin: 0;
+}
+
+.toDoApp {
   margin: 1em;
   padding: 1em;
+  width: 30%;
 }
 
-.done{
+.done {
   text-decoration: line-through;
+}
+
+.toDoList {
+  background-color: rgba(206, 17, 38, 0.05);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+#AddListTextBox {
+  font-size: 18px;
+  padding-top: 1em;
 }

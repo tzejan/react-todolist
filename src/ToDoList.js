@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AddTask from "./addTask"
 
 class ToDoList extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class ToDoList extends Component {
   render() {
     //console.log(typeof this.props.toDoList);
     return (
-      <div>
+      <div className="toDoList">
         <h2>{this.props.toDoList.name}</h2>
         {this.props.toDoList.tasks.map((task, idx) => {
           return (
@@ -22,12 +23,12 @@ class ToDoList extends Component {
             </li>
           );
         })}
+        <AddTask listID={this.props.id} onAddTask={this.props.onAddTask} />
       </div>
     );
   }
 
   handleClick(e) {
-    console.log(e.target.id);
     let taskIDs = e.target.id.split("_");
     this.props.onTaskComplete(taskIDs[0], taskIDs[1]);
   }
