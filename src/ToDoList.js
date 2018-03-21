@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import AddTask from "./addTask"
+import AddTask from "./AddTask";
+import ToDoItem from "./ToDoItem";
 
 class ToDoList extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
   render() {
     //console.log(typeof this.props.toDoList);
@@ -13,24 +14,27 @@ class ToDoList extends Component {
         <h2>{this.props.toDoList.name}</h2>
         {this.props.toDoList.tasks.map((task, idx) => {
           return (
-            <li
+            <ToDoItem
               key={idx}
-              id={this.props.id + "_" + idx}
-              className = {task.isCompleted ? "done" : ""}
-              onClick={this.handleClick}
-            >
-              {task.description}
-            </li>
+              task={task}
+              onTaskComplete={this.handleClick.bind(
+                this,
+                this.props.list_id,
+                idx
+              )}
+            />
           );
         })}
-        <AddTask listID={this.props.id} onAddTask={this.props.onAddTask} />
+        <AddTask
+          list_id={this.props.list_id}
+          onAddTask={this.props.onAddTask}
+        />
       </div>
     );
   }
 
-  handleClick(e) {
-    let taskIDs = e.target.id.split("_");
-    this.props.onTaskComplete(taskIDs[0], taskIDs[1]);
+  handleClick(listID, taskID) {
+    this.props.onTaskComplete(listID, taskID);
   }
 }
 

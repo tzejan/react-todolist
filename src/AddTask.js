@@ -9,16 +9,19 @@ class AddTask extends Component {
   render() {
     return (
       <div>
-        <input type="text" onKeyPress={this.handleKey} placeholder="Add new task" />
+        <input
+          type="text"
+          onKeyPress={this.handleKey}
+          placeholder="Add new task"
+        />
       </div>
     );
   }
   handleKey(event) {
-    // console.log(event.key, event.target.value);
     if (event.key !== "Enter" || event.target.value === "") {
       return;
     }
-    this.props.onAddTask(this.props.listID, event.target.value);
+    this.props.onAddTask(this.props.list_id, event.target.value);
     event.target.value = "";
   }
 }

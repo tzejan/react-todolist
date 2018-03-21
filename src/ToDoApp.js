@@ -38,7 +38,7 @@ class ToDoApp extends Component {
         {this.state.toDoLists.map((list, idx) => (
           <ToDoList
             key={idx}
-            id={idx}
+            list_id={idx}
             toDoList={list}
             onTaskComplete={this.updateTaskStatus}
             onAddTask={this.addTaskToList}

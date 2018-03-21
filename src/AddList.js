@@ -9,7 +9,11 @@ class AddList extends Component {
   render() {
     return (
       <div id="AddListTextBox">
-        <input type="text" onKeyPress={this.handleKey} placeholder="Add new list" />
+        <input
+          type="text"
+          onKeyPress={this.handleKey}
+          placeholder="Add new list"
+        />
       </div>
     );
   }
