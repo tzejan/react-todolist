@@ -16,8 +16,8 @@ h2 {
 
 .toDoApp {
   margin: 1em;
-  padding: 1em;
-  width: 30%;
+  /*padding: 1em;*/
+  
 }
 
 .done {
@@ -28,8 +28,8 @@ h2 {
   background-color: rgba(206, 17, 38, 0.05);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
-  line-height: 32px;
-  margin: 0 0 24px;
+  line-height: 24px;
+  margin: 0 0 12px;
 }
 
 #AddListTextBox {

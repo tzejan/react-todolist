@@ -3,12 +3,7 @@ import AddTask from "./AddTask";
 import ToDoItem from "./ToDoItem";
 
 class ToDoList extends Component {
-  constructor(props) {
-    super(props);
-    // this.handleClick = this.handleClick.bind(this);
-  }
   render() {
-    //console.log(typeof this.props.toDoList);
     return (
       <div className="toDoList">
         <h2>{this.props.toDoList.name}</h2>
@@ -27,7 +22,9 @@ class ToDoList extends Component {
         })}
         <AddTask
           list_id={this.props.list_id}
+          value={this.props.toDoList.newTask}
           onAddTask={this.props.onAddTask}
+          onUpdateNewTask={this.props.onUpdateNewTask.bind(this, this.props.list_id)}
         />
       </div>
     );

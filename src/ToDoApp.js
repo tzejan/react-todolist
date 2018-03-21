@@ -20,17 +20,20 @@ class ToDoApp extends Component {
       toDoLists: [
         {
           name: "Home ToDos",
-          tasks: homeTodos
+          tasks: homeTodos,
+          newTask: ""
         },
         {
           name: "Work ToDos",
-          tasks: workTodos
+          tasks: workTodos,
+          newTask: ""
         }
       ]
     };
     this.updateTaskStatus = this.updateTaskStatus.bind(this);
     this.addTaskToList = this.addTaskToList.bind(this);
     this.addNewList = this.addNewList.bind(this);
+    this.updateNewTask = this.updateNewTask.bind(this);
   }
   render() {
     return (
@@ -42,6 +45,7 @@ class ToDoApp extends Component {
             toDoList={list}
             onTaskComplete={this.updateTaskStatus}
             onAddTask={this.addTaskToList}
+            onUpdateNewTask={this.updateNewTask}
           />
         ))}
         <AddList onAddList={this.addNewList}/>
@@ -55,12 +59,20 @@ class ToDoApp extends Component {
     this.setState({ updateToDoLists });
   }
 
+  updateNewTask(listIndex, taskName){
+    let newTaskName = taskName;
+    let updateToDoLists = this.state.toDoLists;
+    updateToDoLists[listIndex].newTask = newTaskName;
+    this.setState({updateToDoLists});
+  }
+
   addTaskToList(listIndex, taskName) {
     let updateToDoLists = this.state.toDoLists;
     updateToDoLists[listIndex].tasks.push({
       description: taskName,
       isCompleted: false
     });
+    updateToDoLists[listIndex].newTask = "";
     this.setState({ updateToDoLists });
   }
 
@@ -68,7 +80,8 @@ class ToDoApp extends Component {
     let updateToDoLists = this.state.toDoLists;
     updateToDoLists.push({
       name: newListName,
-      tasks: []
+      tasks: [],
+      newTask: ""
     });
     this.setState({ updateToDoLists });
   }
