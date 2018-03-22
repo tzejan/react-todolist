@@ -1,3 +1,6 @@
+/**
+ * @jest-environment node
+ */
 import React from "react";
 import { shallow } from "enzyme";
 import ToDoList from "./ToDoList";
@@ -5,7 +8,7 @@ import AddList from "./AddList";
 import ToDoItem from "./ToDoItem";
 
 describe("To Do List", () => {
-  it("should render toDo List", () => {
+  it("should render toDo List properly", () => {
     const toDoListData = {
       name: "Home ToDos",
       tasks: [
