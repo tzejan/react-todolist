@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '9'
+cache:
+  directories:
+  - node_modules
+script:
+- yarn test
+- yarn build
+deploy:
+  provider: heroku
+  app: peaceful-shelf-29414
+  on:
+    repo: tzejan/react-todolist
+  api_key:
+    secure: EeFzZHwLPZZJ0crVh1gev+iLk4N4IFat9f0d3RdEMQfYaZPZ9ByT+Xc6qc/fMxlg/R8grDafy6d4JoyBrWJHuQOtqVnxAsdqINk31Ucxl5YXB0IzZvId9wq3XpuGt60gbDJhSOKOjfNCenp8SOmLxm9nvQY+vlqKagOibZqlG1ZyU9VBtax+aWIk2TYHCWmeO35Ow/b90lm7wkrN9WpOgI0LKxMV6EA9C1MO6RVlB86xNZiNlhuihp6oMsN01WloKwIpy1lcN+rZv+g2t3x5PzGiGcoaHyH0KbPNME9tnyBOaLg3+U7TuQbfKjBMw0MuIUtsSkccXK2jP9rwY+fDZ51eOoxefZv3jipV9LnPH9d/hf7knPNkp6REiGFLt0FXp0ryF4rTUp+4Ec+h/iKrz8QqUTIZ1dhI7cMHNG5cU/dl151xC/gHiXq7MAvEGQ6kyP9T4OZSMIoGnmWnSF2LSyWHTNRtqzH8LVNG5g5RNASaIhvDlkCg3cJ4kDKBw35z+FvO2sVrC4Xj4iPQz9bf9wzAcfQqH2RR641Xfu5KU+wnpjJnyU7/Yrv6JZGk60u2+bH28lkRrBZsJy7nC/4ZTuU02i0zeIxWImv6Z3LB2c7U+YTnaSSdBLjfT0qAelWaC47zNzKM21k4XyRCZxbC6QfVOeyIj2bapU4kFJlG+kY=
